@@ -1,22 +1,30 @@
+def render-tpl [
+    template_file: string
+]: record -> string {
+    $in | format pattern (open --raw $template_file)
+}
+
 def "nur release" [
     version: string
 ] {
+    let url = $'https://github.com/ddanier/nur/archive/refs/tags/v($version).tar.gz'
     let hash = (
-        http get --raw $'https://github.com/ddanier/nur/archive/refs/tags/v($version).tar.gz'
+        http get --raw $url
         | shasum -a 256
         | parse --regex '^(?P<hash>[^ ]+) '
         | get hash
         | first
     )
 
-    let warning = (open --raw "templates/warning.template")
+    let warning = ({} | render-tpl "templates/warning.template")
     let formula = (
         {
             version: $version
+            url: $url
             hash: $hash
             bin: "{bin}"  # Workaround for #{bin} used in tests
         }
-        | format pattern (open --raw "templates/nur.rb.template")
+        | render-tpl "templates/nur.rb.template"
     )
 
     [$warning, $formula] | str join (char nl) | save -f "Formula/nur.rb"
