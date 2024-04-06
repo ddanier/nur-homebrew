@@ -1,5 +1,5 @@
 class Nur < Formula
-  desc "A task runner based on nu shell"
+  desc "Task runner based on nu shell"
   homepage "https://github.com/ddanier/nur"
   url "https://github.com/ddanier/nur/archive/refs/tags/v{version}.tar.gz"
   # Update with `http get --raw https://github.com/ddanier/nur/archive/refs/tags/v{version}.tar.gz | shasum -a 256`
