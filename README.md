@@ -1,2 +1,11 @@
 # nur-homebrew
-Homebrew formula to install nur - a tesk runenr based on nu shell
+
+Homebrew formula to install `nur` - a task runner based on `nu` shell
+
+## Usage
+
+```shell
+> brew tap ddanier/nur https://github.com/ddanier/nur-homebrew.git
+> brew update
+> brew install nur
+```
