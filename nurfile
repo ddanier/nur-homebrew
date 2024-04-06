@@ -1,0 +1,23 @@
+def "nur release" [
+    version: string
+] {
+    let hash = (
+        http get --raw $'https://github.com/ddanier/nur/archive/refs/tags/v($version).tar.gz'
+        | shasum -a 256
+        | parse --regex '^(?P<hash>[^ ]+) '
+        | get hash
+        | first
+    )
+
+    let warning = (open --raw "templates/warning.template")
+    let formula = (
+        {
+            version: $version
+            hash: $hash
+            bin: "{bin}"  # Workaround for #{bin} used in tests
+        }
+        | format pattern (open --raw "templates/nur.rb.template")
+    )
+
+    [$warning, $formula] | str join (char nl) | save -f "Formula/nur.rb"
+}
