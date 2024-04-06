@@ -3,7 +3,7 @@
 #############################################################################
 
 class Nur < Formula
-  desc "nur - a task runner based on nu shell"
+  desc "A task runner based on nu shell"
   homepage "https://github.com/ddanier/nur"
   url "https://github.com/ddanier/nur/archive/refs/tags/v0.1.16.tar.gz"
   # Update with `http get --raw https://github.com/ddanier/nur/archive/refs/tags/v0.1.16.tar.gz | shasum -a 256`
