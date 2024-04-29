@@ -1,6 +1,8 @@
 # nur-homebrew
 
-Homebrew formula to install `nur` - a task runner based on `nu` shell
+Homebrew formula to install `nur` - a task runner based on `nu` shell.
+
+See https://github.com/ddanier/nur for details.
 
 ## Usage
 
