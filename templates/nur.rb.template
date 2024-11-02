@@ -1,10 +1,10 @@
 class Nur < Formula
   desc "Task runner based on nu shell"
-  homepage "https://github.com/ddanier/nur"
+  homepage "https://github.com/nur-taskrunner/nur"
   url "{url}"
   sha256 "{hash}"
   license "MIT"
-  head "https://github.com/ddanier/nur.git", branch: "main"
+  head "https://github.com/nur-taskrunner/nur.git", branch: "main"
 
   livecheck do
     url :stable

@@ -7,7 +7,7 @@ def render-tpl [
 def "nur release" [
     version: string
 ] {
-    let url = $'https://github.com/ddanier/nur/archive/refs/tags/v($version).tar.gz'
+    let url = $'https://github.com/nur-taskrunner/nur/archive/refs/tags/v($version).tar.gz'
     let hash = (
         http get --raw $url
         | shasum -a 256

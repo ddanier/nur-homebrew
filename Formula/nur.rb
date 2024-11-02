@@ -4,11 +4,11 @@
 #############################################################################
 class Nur < Formula
   desc "Task runner based on nu shell"
-  homepage "https://github.com/ddanier/nur"
-  url "https://github.com/ddanier/nur/archive/refs/tags/v0.11.1.tar.gz"
+  homepage "https://github.com/nur-taskrunner/nur"
+  url "https://github.com/nur-taskrunner/nur/archive/refs/tags/v0.11.1.tar.gz"
   sha256 "7c7cd9337a953488a7fa89bb60144832261cdbeb62503461f1fb6ba093cb50d7"
   license "MIT"
-  head "https://github.com/ddanier/nur.git", branch: "main"
+  head "https://github.com/nur-taskrunner/nur.git", branch: "main"
 
   livecheck do
     url :stable
