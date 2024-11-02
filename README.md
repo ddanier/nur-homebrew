@@ -7,7 +7,7 @@ See https://github.com/nur-taskrunner/nur for details.
 ## Usage
 
 ```shell
-> brew tap ddanier/nur https://github.com/nur-taskrunner/homebrew.git
+> brew tap nur-taskrunner/homebrew https://github.com/nur-taskrunner/homebrew.git
 > brew update
 > brew install nur
 ```
