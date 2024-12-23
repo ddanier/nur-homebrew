@@ -7,6 +7,7 @@ def render-tpl [
 def "nur release" [
     version: string
 ] {
+    let main_version = if ("+" in $version) {$version | split row "+" | get 0} else {$version}
     let url = $'https://github.com/nur-taskrunner/nur/archive/refs/tags/v($version).tar.gz'
     let hash = (
         http get --raw $url
@@ -20,6 +21,7 @@ def "nur release" [
     let formula = (
         {
             version: $version
+            main_version: $main_version
             url: $url
             hash: $hash
             bin: "{bin}"  # Workaround for #{bin} used in tests

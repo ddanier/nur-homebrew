@@ -10,6 +10,7 @@ class Nur < Formula
   sha256 "16d20592b4d48fbcb593fdfc9a4344e3c0fcfa364c5cacb9eccaa1ec10b1d264"
   license "MIT"
   head "https://github.com/nur-taskrunner/nur.git", branch: "main"
+  version "0.13.0"
 
   livecheck do
     url :stable
